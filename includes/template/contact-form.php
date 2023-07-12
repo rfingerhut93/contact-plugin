@@ -7,26 +7,28 @@ if(!defined('ABSPATH')){
 ?>
 
 <?php if(get_plugin_options('contact_plugin_active')):?>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@900&family=Quicksand&display=swap" rel="stylesheet">
+
 <div id="form_success" style="background: green; color: white;"></div>
 <div id="form_error" style="background: red; color: white;"></div>
 
 <form action="" id="inquiry_form">
 
     <?php wp_nonce_field('wp_rest');?>
-
-    <div id="form-top-row">
-        <label for="name">Name</label>
-        <input id="name" type="text" name="name" placeholder="Charlotte Bronte">
-
-        <label for="email">Email</label><br/>
-        <input id="email" type="text" name="email" placeholder="cbell@email.com">
-
-        <label for="phone">Phone Number</label><br/>
-        <input id="phone-number" type="text" name="phone" placeholder="(***)***-****">
+    <div class="header">
+        <h2 id="title">Contact Me</h2>
     </div>
+    <div id="form-top-row">
+            <input id="name" type="text" name="name" placeholder="Name" required/>
+        <input id="email" type="text" name="email" placeholder="Email" required/>
+        <span class="dashicons dashicons-admin-site"></span>        
+        <input id="phone-number" type="text" name="phone" placeholder="Phone Number">
+    </div>
+
     <div id="form-bottom-row">
-        <label for="message">Your message</label>
-        <textarea name="message" id="" cols="30" rows="10"></textarea>
+        <textarea name="message" id="" cols="30" rows="10" placeholder="Message"></textarea>
         <button type="submit">Submit form</button>
     </div>
 </form>
